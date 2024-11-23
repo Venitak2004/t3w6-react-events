@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import PokemonCard from './components/PokemonCard'
 
 
 export default class App extends Component{
@@ -42,6 +43,17 @@ export default class App extends Component{
         this.increasePokemonNumber();
       } 
       }>Increase Pokemon Amount</button>
+      {
+        // this creates an array of given length 
+        Array(this.state.numberOfPokemon)
+        // create the array with nothing inside to be populated with the called amount
+        .fill(null)
+        // working on the array - must have a function and return values
+        .map((element, index) => {
+          return <PokemonCard key={index}/>
+        })
+      }
+   
 
     </>
 
